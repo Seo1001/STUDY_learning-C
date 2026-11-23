@@ -1,5 +1,5 @@
-# High-School_C-learning
-고등학교에서 배운 C언어
+# STUDY_learning-C
+C언어 공부 기록 (2022년: 고등학교, 2026년~: 대학교)
 
 수업 날짜별 폴더(`YYYYMMDD`)에 그날 작성한 코드가 들어 있습니다.
 
