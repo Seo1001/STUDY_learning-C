@@ -1,0 +1,56 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cl.exe 활성 파일 빌드",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "디버거에서 생성된 작업입니다."
+        },
+        {
+            "type": "shell",
+            "label": "1. 오늘 수업 폴더 만들기",
+            "command": "$d = Get-Date -Format 'yyyyMMdd'; if (Test-Path $d) { Write-Host \"이미 있어요: $d\" } else { New-Item -ItemType Directory $d | Out-Null; Write-Host \"만들었어요: $d\" }",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "powershell.exe",
+                    "args": ["-NoProfile", "-Command"]
+                }
+            },
+            "problemMatcher": [],
+            "detail": "오늘 날짜(YYYYMMDD) 폴더를 만듭니다."
+        },
+        {
+            "type": "shell",
+            "label": "2. GitHub에 올리기",
+            "command": "if (git status --porcelain) { git add -A; git commit -m \"$(Get-Date -Format 'yyyy-MM-dd') 수업 과제\"; git push; Write-Host '올리기 완료!' } else { Write-Host '새로 바뀐 파일이 없어요.' }",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "powershell.exe",
+                    "args": ["-NoProfile", "-Command"]
+                }
+            },
+            "problemMatcher": [],
+            "detail": "바뀐 파일을 모두 커밋하고 GitHub에 올립니다."
+        }
+    ],
+    "version": "2.0.0"
+}

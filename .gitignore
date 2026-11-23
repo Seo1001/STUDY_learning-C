@@ -1,0 +1,13 @@
+# 컴파일하면 생기는 파일들 (GitHub에 올릴 필요 없음)
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.idb
+*.out
+
+# 편집기/운영체제가 만드는 파일
+.vs/
+Thumbs.db
+desktop.ini
