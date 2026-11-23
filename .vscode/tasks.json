@@ -1,28 +1,9 @@
 {
+    // 이 과제 폴더에서만 쓰는 작업
+    // - C 실행: 오른쪽 위 ▶ 버튼 또는 Ctrl + Alt + N (VS Code 전체 설정)
+    // - GitHub에 올리기: Ctrl + Alt + U (VS Code 전체 설정)
+    "version": "2.0.0",
     "tasks": [
-        {
-            "type": "cppbuild",
-            "label": "C/C++: cl.exe 활성 파일 빌드",
-            "command": "cl.exe",
-            "args": [
-                "/Zi",
-                "/EHsc",
-                "/nologo",
-                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$msCompile"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "디버거에서 생성된 작업입니다."
-        },
         {
             "type": "process",
             "label": "1. 오늘 수업 폴더 만들기",
@@ -30,15 +11,6 @@
             "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\new-folder.ps1"],
             "problemMatcher": [],
             "detail": "오늘 날짜(YYYYMMDD) 폴더를 만듭니다."
-        },
-        {
-            "type": "process",
-            "label": "2. GitHub에 올리기",
-            "command": "powershell.exe",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\upload.ps1"],
-            "problemMatcher": [],
-            "detail": "바뀐 파일을 모두 커밋하고 GitHub에 올립니다."
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
